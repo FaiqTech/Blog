@@ -1,0 +1,315 @@
+@import"./mixins";
+*{
+   font-family: 'cabin',sans-serif;
+   margin: 0;
+   padding: 0;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 80px;
+    padding: 3%;
+    align-items: center;
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo{
+      &__link{
+       text-decoration: none;
+        &-title{
+          color: black;
+          font-weight: 400;
+        }
+      }
+    }
+    .navigation{
+        @include tablet{
+            display: none;
+        }
+        @include mobile{
+            display: none;
+        }
+        &__list{
+            display: flex;
+            list-style-type: none;
+            &-item{
+                &-link{
+                    text-decoration: none;
+                    color: #38302f;
+                    margin: 0 20px;
+                    position: relative;
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        background-color: black;
+                        height: 3px;
+                        width: 0;
+                        left: 0;
+                        bottom: -10px;
+                        transition: 0.3s;
+                       
+                    }
+                    &:hover:after{
+                        width: 100%;
+                    }
+                
+                }
+            }
+        }
+    }
+    .burger{
+        display: none;
+        @include tablet{
+            display: block;
+        }
+        @include mobile{
+            display: block;
+        }
+    }
+}
+
+#main{
+    .main__text{
+        &-title{
+            font-weight: 500;
+            font-size: 60px;
+            margin-left: 5.5%;
+            margin-top: 7%;
+        }
+    }
+    .sale-post{
+       display: flex;
+       justify-content: space-evenly;
+       flex-wrap: wrap-reverse;
+       &_img{
+        width: 50%;
+       
+        @include mobile{
+            width: 100%;
+        }
+        @include tablet{
+            width: 95%;
+        }
+        &-png{
+         width: 100%;
+        }
+        &-btn{
+          
+            @include mobile{
+                display: block;
+               
+            }
+            @include tablet{
+                display: block;
+                width: 73px;
+            }
+            display: none;
+            margin-top: 3%;
+            text-decoration: none;
+            border: none;
+            background-color: black;
+            color: #fff;
+            padding: 15px 25px;
+            transition: 0.5s;
+            &:hover{
+             opacity: 0.7;
+            }
+        }
+       }
+       .sale-post__content{
+         font-weight: 500;
+        
+         
+        &-title{
+            line-height: 30px;
+            margin-bottom:12%;
+        }
+        &-btn{
+               @include tablet{
+                display: none;
+               }
+            &-link{
+               text-decoration: none;
+               border: none;
+               background-color: black;
+               color: #fff;
+               padding: 15px 25px;
+               transition: 0.5s;
+               &:hover{
+                opacity: 0.7;
+               }
+            }
+        }
+       }
+    }
+
+    .about-post{
+      &__content{
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 8%;
+        margin-top: 8%;
+        &-title{
+          line-height: 40px;
+           font-size: 18px;
+         &-btn{
+
+            text-decoration: none;
+            border: none;
+            background-color: black;
+            color: #fff;
+            padding: 15px 25px;
+            transition: 0.5s;
+            &:hover{
+             opacity: 0.7;
+            }
+         }
+        }
+        &-img{
+            width: 50%;
+  
+        @include mobile{
+            width: 100%;
+            margin-top: 10%;
+        }
+        @include tablet{
+            width: 100%;
+            margin-top: 10%;
+        }
+           
+          &-png{
+           @include mobile{
+            width: 90%;
+            height: 60vh;
+           }
+           @include tablet{
+            width: 95%;
+            
+           }
+            width: 88%;
+            height: 70vh;
+          }
+        }
+      }
+    }
+
+    .recent-post{
+        @include mobile{
+            flex-direction: column;
+
+        }
+        background-color:rgb(227, 227, 227);
+      &__text{
+      margin: 8%;
+      font-size: 25px;
+      line-height: 70px;
+      }
+      .top2{
+         @include mobile{
+            flex-wrap: wrap;
+         }
+         @include tablet{
+            flex-wrap: wrap;
+         }
+        display: flex;
+       justify-content: space-between;
+       margin-left: 10%;
+       margin-top: 10%;
+        .recent-post__content{
+            &-img{
+                width: 75%;
+                &-png{
+                 width: 100%;
+                }
+            }
+
+            &-title{
+              line-height: 30px;
+            }
+        }
+
+      }
+    }
+
+    .quote-post{
+        margin-top: 8%;
+        &__content{
+            @include mobile{
+                flex-wrap: wrap-reverse;
+            }
+            @include tablet{
+                flex-direction: column-reverse;
+            }
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            line-height: 50px;
+            &-img{
+                width: 33%;
+                @include mobile{
+                    width: 100%;
+                  }
+                @include tablet{
+                  width: 50%;
+                }
+               
+                &-png{
+                  width: 100%;
+                  
+                }
+            }
+           &-title{
+             
+           } 
+        }
+    }
+
+    .blog__mail{
+        margin-top: 10%;
+        padding: 3%;
+        background-color: rgb(227, 227, 227);
+        text-align: center;
+        line-height: 50px;
+        &-content{
+         font-size: 20px;
+        }
+        &-form{
+            
+            &-inpt{
+              padding: 1% 4%;
+              text-align: center;
+              outline: none;
+              border: none;
+              
+            }
+            &-btn{
+             margin-top: 2%;
+             color: #fff;
+             background-color: black;
+             padding: 1% 3%;
+             transition: 0.5s;
+             border: nones;
+             &:hover{
+                opacity: 0.5;
+             }
+            }
+        }
+    }
+
+    #footer{
+        background-color: black;
+        padding: 4%;
+        .footer__list{
+            display: flex;
+            justify-content: center;
+            &-item{
+                &-link{
+                  margin: 0 20px;
+                }
+            }
+        }
+    }
+}
